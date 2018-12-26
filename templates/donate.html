@@ -1,0 +1,76 @@
+{% load static %}
+<!DOCTYPE HTML>
+
+<html>
+<head>
+    <title>Гонка кондидатов</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="{% static "assets/css/main.css" %}"/>
+    <link rel="stylesheet" href="{% static "assets/css/votes.css" %}">
+</head>
+<body>
+
+<!-- Header -->
+<header id="header">
+    <div class="logo">&nbsp;</div>
+    <a href="#menu"><span>Menu</span></a>
+</header>
+<!-- Nav -->
+<nav id="menu">
+    <ul class="links">
+        <li><a href="/">Главная</a></li>
+        <li><a href="/votes/">Гонка кандидатов</a></li>
+
+        <li><a href="/donate/">Пожертвования</a></li>
+        <li><a href="/login/">Авторизация</a></li>
+    </ul>
+</nav>
+
+
+<section id="post" class="wrapper bg-img" data-bg="{% static "images/pres.jpg" %}">
+    <div class="inner">
+        <article class="box">
+            <div class="candidates-lsit">
+                <div class="candidates-list-item">
+                    <img align="left" src="{% static "images/can1.gif" %}" width="222" height="400" alt="Кандидат 1">
+
+                    <a href="https://auth.robokassa.ru/Merchant/Index.aspx?MerchantLogin=[candidats]&OutSum=[200]&Description=[Пожерствование]&SignatureValue=[значение]" class="more " >Пожертвовать</a>
+                </div>
+                <div class="candidates-list-item">
+                    <img align="left" src="{% static "images/can2.gif" %}" width="222" height="400" alt="">
+
+                    <a href="https://auth.robokassa.ru/Merchant/Index.aspx?MerchantLogin=[candidats]&OutSum=[200]&Description=[Пожерствование]&SignatureValue=[значение]" cass="more " >Пожертвовать</a>
+
+                </div>
+                <div class="candidates-list-item">
+                    <img align="left" src="{% static "images/can3.gif" %}" width="222" height="400" alt="">
+                <a href="https://auth.robokassa.ru/Merchant/Index.aspx?MerchantLogin=[candidats]&OutSum=[200]&Description=[Пожерствование]&SignatureValue=[значение]" class="more " >Пожертвовать</a>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+    </div>
+
+
+
+
+<div id="myDiv"></div>
+
+<script src="{% static "assets/js/jquery.min.js" %}"></script>
+<script src="{% static "assets/js/jquery.scrolly.min.js" %}"></script>
+<script src="{% static "assets/js/jquery.scrollex.min.js" %}"></script>
+<script src="{% static "assets/js/skel.min.js" %}"></script>
+<script src="{% static "assets/js/util.js" %}"></script>
+
+<script src="{% static "assets/js/main.js" %}"></script>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+
+</body>
+</html>
+

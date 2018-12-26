@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Авторизация</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+
+     <!-- Bootstrap-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400" rel="stylesheet">
+
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+{% if not is_auth %}
+
+<div class="general-container">
+        <div class="container top-container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                   <h1 class="title">Войдите для голосование</h1>
+                    <br>
+                    <br>
+
+
+    <form method="post" class="form-inline" action="{% url 'try-login' %}">{% csrf_token %}
+        <div>
+        <label for="username">Ваше имя: </label>
+        <input id="username" type="text" name="username" class="form-control" value="">
+
+
+
+        <label for="password">Введите пароль:: </label>
+        <input id="password" type="text" name="password" class="form-control" value="">
+
+        <input type="submit"  class="btn btn-primary btn-orange" value="Отправить"/>
+                   </div>
+
+
+
+    </form>
+                     <br>
+                     <br>
+       <br>
+                                    <br>
+                     <br>
+                    <br>
+                    <h1 class="title">Регистрация</h1>
+                    <br>
+                    <br>
+
+    <form method="post" class="form-inline "  action="{% url 'try-register' %}">{% csrf_token %}
+        <div>
+        <label for="new-username">Ваше имя: : </label>
+        <input id="new-username" type="text" class="form-control" name="username" value="">
+
+        <label for="new-password">Введите пароль: </label>
+        <input id="new-password" type="text" class="form-control" name="password" value="">
+
+        <input type="submit" class="btn btn-primary btn-orange" value="Регистрация"/>
+            </div>
+    </form>
+{% endif %}
+{% if is_auth %}
+                    <div class="general-container">
+        <div class="container top-container">
+            <div class="row">
+
+                <div class="col-lg-8 col-lg-offset-2">
+                    <h1 class="title">ВЫ УЖЕ АВТОРИЗОВАНЫ</h1>
+    <form method="post" action="{% url 'try-login' %}">
+        {% csrf_token %}
+        <div>
+        <input type="submit" class="btn btn-primary btn-orange"  value="Регистрация">
+     </div>
+    </form>
+{% endif %}
+                  </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

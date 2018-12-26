@@ -1,0 +1,115 @@
+{% load static %}
+<!DOCTYPE HTML>
+
+<html>
+<head>
+    <title>Главная страница</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="{% static "assets/css/main.css" %}"/>
+</head>
+<body>
+
+<!-- Header -->
+<header id="header">
+    <div class="logo"></div>
+    <a href="#menu"><span>Menu</span></a>
+</header>
+
+<!-- Nav -->
+<nav id="menu">
+    <ul class="links">
+        <li><a href="/">Главная</a></li>
+        <li><a href="/votes/">Голосование</a></li>
+               <li><a href="/donate/">Пожертвования</a></li>
+        <li><a href="/login/">Авторизация</a></li>
+    </ul>
+</nav>
+
+
+<section id="banner" class="bg-img" data-bg="{% static "images/pres.jpg" %}">
+    <div class="inner">
+        <header>
+            <h1>Выбери своего кандидата от группы</h1>
+        </header>
+    </div>
+    <a href="#one" class="more">Проголосовать</a>
+</section>
+
+<!-- One -->
+<section id="one" class="wrapper post bg-img" data-bg="{% static "images/can1-1.jpg" %}">
+    <div class="inner">
+        <article class="box">
+            <header>
+                <h2 align="left">Глеб Левинков</h2>
+                <p align="left">Воинская дисциплина и мужская ответственность</p>
+            </header>
+            <img align="left" src="{% static "images/can1.gif" %}" width="350" height="400" alt="Кандидат 1">
+            <div class="content">
+                <p> Уроженец города Хабаровск, Глеб Станиславович Левинков, рожденный в династии военных, с младенчества
+							знаком с такими понятиями, как ответственность, дисциплина и порядок. Глеб, прошел службу в суворовском училище, где стал лучшим
+							кадетом 2015. Имеет ряд наград, в числе которых: за тыловые заслуги.</p>
+            </div>
+            <footer>
+                <a href="/votes/" class="button alt">Проголосовать</a>
+            </footer>
+        </article>
+    </div>
+    <a href="#two" class="more">Проголосовать</a>
+</section>
+
+<!-- Two -->
+<section id="two" class="wrapper post bg-img" data-bg="{% static "images/can2-1.jpg" %}">
+    <div class="inner">
+        <article class="box">
+            <header>
+                <h2 align="left">Радченко Сергей</h2>
+                <p align="left">الله عظيم</p>
+            </header>
+            <img align="left" src="{% static "images/can2.gif" %}" width="300" height="350" alt="Кандидат 2">
+            <div class="content">
+                <p>غليب ستانيسلافوفيتش ليفينكوف ، ولد في سلالة عسكرية ، من مرحلة الطفولةعلى دراية بمفاهيم مث
+                    ل المسؤولية والانضباط والنظام. جليب ، خدم في مدرسة سوفوروف ، حيث أصبح الأفضلطالبا.
+                    لديه عدد من الجوائز ، بما في ذلك: للخدمات الخلفية.</p>
+            </div>
+            <footer>
+                <a href="/votes/" class="button alt">Проголосовать</a>
+            </footer>
+        </article>
+    </div>
+    <a href="#three" class="more">Проголосовать</a>
+</section>
+
+<!-- Three -->
+<section id="three" class="wrapper post bg-img" data-bg="{% static "images/can3-1.jpg" %}">
+    <div class="inner">
+        <article class="box">
+            <header>
+                <h2 align="left">Горбунов Леонид</h2>
+                <p align="left">Мемы - как образ мысли</p>
+            </header>
+            <img align="left" src="{% static "images/can3.gif" %}" width="350" height="400" alt="Кандидат 1">
+            <div class="content">
+                <p>Здравствуйте, Я Леонид Горбунов и Я хотел бы стать старостой. Весь первый курс, меня терзало сомнение,
+				что я нахожусь не на правильном месте. Меня тянуло к чему-то
+						  большему. И вы знаете, я решил, что быть старостой - это как раз для меня.
+						  Я честный и веселый. Иногда бываю грустным. У меня все, спасибо</p>
+            </div>
+            <footer>
+                <a href="/votes/" class="button alt">Проголосовать</a>
+            </footer>
+        </article>
+    </div>
+</section>
+
+<!-- Scripts -->
+<script src="{% static "assets/js/jquery.min.js" %}"></script>
+<script src="{% static "assets/js/jquery.scrolly.min.js" %}"></script>
+<script src="{% static "assets/js/jquery.scrollex.min.js" %}"></script>
+<script src="{% static "assets/js/skel.min.js" %}"></script>
+<script src="{% static "assets/js/util.js" %}"></script>
+
+<script src="{% static "assets/js/main.js" %}"></script>
+
+</body>
+</html>

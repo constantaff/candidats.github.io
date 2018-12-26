@@ -1,0 +1,119 @@
+{% load static %}
+<!DOCTYPE HTML>
+
+<html>
+     <title>Гонка кандидатов</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="{% static "assets/css/main.css" %}"/>
+    <link rel="stylesheet" href="{% static "assets/css/votes.css" %}">
+</head>
+<body>
+
+<!-- Header -->
+<header id="header">
+    <div class="logo">&nbsp;</div>
+    <a href="#menu"><span>Menu</span></a>
+</header>
+
+<!-- Nav -->
+<nav id="menu">
+    <ul class="links">
+        <li><a href="/">Главная</a></li>
+        <li><a href="/votes/">Гонка кандидатов</a></li>
+
+        <li><a href="/donate/">Пожертвования</a></li>
+        <li><a href="/login/">Авторизация</a></li>
+    </ul>
+</nav>
+
+
+<section id="post" class="wrapper bg-img" data-bg="{% static "images/pres.jpg" %}">
+    <div class="inner">
+        <article class="box">
+            <div class="candidates-lsit">
+                <div class="candidates-list-item">
+                    <img align="left" src="{% static "images/can1.gif" %}" width="222" height="400" alt="Кандидат 1">
+                    <span class="candidates-list-item-name">Глеб Левинков</span>
+                    <span class="candidates-list-item-desc">Воинская дисциплина и мужская ответственность</span>
+                    <p class="candidates-list-item-text">Уважаемые избератели, Я Левинков Глеб, который прошел ни один ад.
+					Который имеет огромных ряд наград, который знает, что такое руководить людьми
+									и перекладывать свои обязанности на других, который своими мазолистыми руками сотворил
+									себе имя Мужчина, который скромен и вежлив. Я вас заверяю, уважаемые избиратели</p>
+                    <p>&nbsp;</p>
+                    <p>&nbsp;</p>
+                    <p>{{ levinkov.votes }}</p>
+                    <a href="/add-vote/1" class="btn">Проголосовать</a>
+                </div>
+                <div class="candidates-list-item">
+                    <img src="{% static "images/can2.gif" %}" alt="">
+                    <span class="candidates-list-item-name">Радченко Сергей</span>
+                    <span class="candidates-list-item-desc">الله عظيم</span>
+                    ل المسؤولية والانضباط والنظام. جليب ، خدم في مدرسة سوفوروف ، حيث أصبح الأفضلطالبا.
+							لديه عدد من الجوائز ، بما في ذلك: للخدمات الخلفية.ل المسؤولية والانضباط والنظام. جليب ، خدم في مدرسة سوفوروف ، حيث أصبح الأفضلطالبا.
+							لديه عدد من الجوائز ، بما في ذلك: للخدمات الخلفيةل المسؤولية والانضباط والنظام.فوروف ، حيث أصبح الأفضلطالبا.ام. جليب ، خدم في مدرسة سوفوروف ، حيث أصبح الأفضلطالبا. ، بما
+							لديه عدد من الجوائز ، بما في ذلك:
+							ل ديهعدد من الجوائز ، بما في ذلك: للخدمات الخلفية	ل المسؤولية والانضباط والنظام. جليب ، خدم في مدرسة سوفوروف ، حيث أصبح الأف
+							ل ديهعدد من الجوائز ، بما في ذلك: للخدمات الخلف</p>
+                    <p>&nbsp;</p>
+                    <p>&nbsp;</p>
+                    <p>{{ radchenko.votes }}</p>
+                    <a href="/add-vote/2" class="btn">Проголосовать</a>
+                </div>
+                <div class="candidates-list-item">
+                    <img src="{% static "images/can3.gif" %}" alt="">
+                    <span class="candidates-list-item-name">Горбунов Леонид</span>
+                    <span class="candidates-list-item-desc">Мемы - как образ мысли</span>
+                    <p class="candidates-list-item-text">Знаете, Я и не ожидал, что дойду до основного тура. Многие мои друзья, отговаривали меня,
+								твердили, что Я не годен для этого. И знаете, Я решил, что быть старостой - это престижно,
+								Я анулирую 5 энок, каждому! Начнем правление с праздника!</p>
+                    <p>&nbsp;</p>
+                    <p>&nbsp;</p>
+                    <p>&nbsp;</p>
+                    <p>&nbsp;</p>
+                    <p>&nbsp;</p>
+                    <p>{{ gorbunov.votes }}</p>
+                    <a href="/add-vote/3" class="btn">Проголосовать</a>
+                </div>
+            </div>
+        </article>
+    </div>
+</section>
+
+
+<section id="banner" class="bg-img" data-bg="{% static "images/pres.jpg" %}">
+    <div class="inner">
+        <header>
+            <h1>Диаграмма голосов</h1>
+        </header>
+    </div>
+
+</section>
+
+
+
+<div id="myDiv"></div>
+
+<script src="{% static "assets/js/jquery.min.js" %}"></script>
+<script src="{% static "assets/js/jquery.scrolly.min.js" %}"></script>
+<script src="{% static "assets/js/jquery.scrollex.min.js" %}"></script>
+<script src="{% static "assets/js/skel.min.js" %}"></script>
+<script src="{% static "assets/js/util.js" %}"></script>
+
+<script src="{% static "assets/js/main.js" %}"></script>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+<script>
+var data = [
+  {
+    x: ['levinkov', 'radchenko', 'gorbunov'],
+    y: ["{{ levinkov.votes }}", "{{ radchenko.votes }}", "{{ gorbunov.votes }}"],
+    type: 'bar'
+  }
+];
+
+Plotly.newPlot('myDiv', data);
+</script>
+
+</body>
+</html>
